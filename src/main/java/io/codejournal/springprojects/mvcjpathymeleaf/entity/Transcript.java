@@ -19,6 +19,7 @@ public class Transcript {
     private String degreeTitle;
 
     // This is one to one relationship
-    @OneToOne(mappedBy = "primaryTranscript", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
     private Student student;
 }
