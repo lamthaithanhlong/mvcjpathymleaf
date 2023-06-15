@@ -1,11 +1,10 @@
 package io.codejournal.springprojects.mvcjpathymeleaf.entity;
 
+import java.util.UUID;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.UUID;
 
 @Entity
 @Table(name = "student")
@@ -13,6 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {
+
     @Id
     @GeneratedValue(generator = "UUID")
     @Column(name = "s_id")
@@ -23,5 +23,4 @@ public class Student {
 
     @Column(name = "s_last_name")
     private String lastName;
-
 }
