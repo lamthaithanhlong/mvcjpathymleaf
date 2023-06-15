@@ -5,19 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Entity
-@Table(name = "student")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "student")
 public class Student {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "s_id")
-    private long id;
+    private Long id;
 
     @Column(name = "s_number", nullable=false)
     private String studentNumber;
@@ -35,5 +32,10 @@ public class Student {
     private double cgpa;
 
     @Column(name = "dateOfEnrollment")
-    private int dateOfEnrollment;
+    private String dateOfEnrollment;
+
+    // This is one to one relationship we need to setup like this
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "transcript_id")
+    private Transcript primaryTranscript;
 }
