@@ -14,6 +14,7 @@ spring.datasource.password: toor
 ### spring.jpa.hibernate.ddl-auto will do migration ###
 spring.jpa.hibernate.ddl-auto: update
 spring.jpa.defer-datasource-initialization: true
+spring.jpa.properties.hibernate.show-sql: true
 
 ## When required the data to be replaced
 # spring.jpa.hibernate.ddl-auto: create

@@ -28,9 +28,12 @@ public class Student {
     @Column(name = "s_last_name", nullable = false)
     private String lastName;
 
+    @Column(name = "s_middle_name")
+    private String middleName;
+
     @Column(name = "cgpa")
-    private int cgpa;
+    private double cgpa;
 
     @Column(name = "dateOfEnrollment")
-    private Date dateOfEnrollment;
+    private int dateOfEnrollment;
 }
