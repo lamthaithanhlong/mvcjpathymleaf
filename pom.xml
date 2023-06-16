@@ -68,6 +68,14 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- Testing -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<!-- We should define version for spring boot maven plugin as well if we want to run "mvn spring-boot:run -->
