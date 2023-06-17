@@ -23,6 +23,7 @@
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
+		<!--Web-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -85,7 +86,11 @@
 			<scope>test</scope>
 		</dependency>
 
-
+		<!--View-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 
 	</dependencies>
 

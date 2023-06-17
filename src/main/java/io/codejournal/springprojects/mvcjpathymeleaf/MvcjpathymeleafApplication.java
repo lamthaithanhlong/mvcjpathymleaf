@@ -22,13 +22,11 @@ public class MvcjpathymeleafApplication {
 	}
 	@Bean
 	public ApplicationRunner initializeStudents() {
-		final Student defaultStudent = new Student( randomUUID(), "John","Doe");
+		final Student defaultStudent = new 	Student(randomUUID(), "John", "Doe");
 		final Student defaultStudent1 = new Student(randomUUID(), "Linda", "Rostam");
 		final Student defaultStudent2 = new Student(randomUUID(), "Tom", "Ryan");
 		final Student defaultStudent3 = new Student(randomUUID(), "Jenny", "Jam");
 		final Student defaultStudent4 = new Student(randomUUID(), "Jackie", "Chan");
-
-		return args -> studentRepository.saveAll(Arrays.asList(defaultStudent,defaultStudent1,defaultStudent2,defaultStudent3,defaultStudent4));
+		return args -> studentRepository.saveAll(Arrays.asList(defaultStudent, defaultStudent1, defaultStudent2, defaultStudent3, defaultStudent4));
 	}
-
 }
