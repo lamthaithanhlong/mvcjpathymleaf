@@ -15,4 +15,25 @@ public class StudentController {
         model.addAttribute("message","Hello world in Thymleaf!!!");
         return "students/list";
     }
+
+    @GetMapping("/students/add")
+    public String add() {
+        return "students/add";
+    }
+
+    @GetMapping("/students/view")
+    public String view() {
+        return "students/view";
+    }
+
+    @GetMapping("/students/edit")
+    public String edit() {
+        return "students/edit";
+    }
+
+    @GetMapping("/student/delete")
+    public String delete() {
+        return "students/delete";
+    }
+
 }
