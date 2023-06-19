@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class StudentController {
+    static final String DEFAULT_PAGE_SIZE = "2";
     private StudentService studentService;
 
     @Autowired
@@ -22,7 +23,7 @@ public class StudentController {
         return "redirect:list";
     }
     @GetMapping("/students/list")
-    public String getStudents(final Model model, @RequestParam(value = "page",defaultValue = "0") final int pageNumber,@RequestParam(value = "size",defaultValue ="10") final int pageSize) {
+    public String getStudents(final Model model, @RequestParam(value = "page",defaultValue = "0") final int pageNumber,@RequestParam(value = "size",defaultValue = DEFAULT_PAGE_SIZE + "") final int pageSize) {
         model.addAttribute("message","Hello world in Thymleaf!!!");
         final Page<Student> page = studentService.getStudents(pageNumber,pageSize);
         final int currentPage = page.getNumber();
