@@ -34,20 +34,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Joe</td>
-                <td>Doe</td>
-                <td>
-                    <button type="button" class="btn btn-primary">View</button>
-                    <button type="button" class="btn btn-warning">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>Sarah</td>
-                <td>Hana</td>
+            <tr th:each="student,iteration : ${students}">
+                <th th:text="${iteration.count}">1</th>
+                <td th:text="${student.firstName}">Joe</td>
+                <td th:text="${student.lastName}">Doe</td>
                 <td>
                     <button type="button" class="btn btn-primary">View</button>
                     <button type="button" class="btn btn-warning">Edit</button>

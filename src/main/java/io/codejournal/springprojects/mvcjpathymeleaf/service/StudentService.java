@@ -19,7 +19,7 @@ public class StudentService {
         this.repository = repository;
     }
 
-    public Page<Student> getStudent(final int pageNumber, final int size) {
+    public Page<Student> getStudents(final int pageNumber, final int size) {
         return repository.findAll(PageRequest.of(pageNumber,size));
     }
 
