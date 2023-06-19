@@ -53,8 +53,18 @@
                     <div class="d-flex">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                <li class="page-item disabled" th:if="${previousPage == -1}">
+                                    <a class="page-link" href="#">Previous</a>
+                                </li>
+                                <li class="page-item" th:if="${previousPage != -1}">
+                                    <a class="page-link" th:href="'?page='+ ${previousPage}">Previous</a>
+                                </li>
+                                <li class="page-item disabled" th:if="${nextPage == -1}">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                                <li class="page-item" th:if="${nextPage != -1}">
+                                    <a class="page-link"  th:href="'?page=' + ${nextPage}">Next</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>

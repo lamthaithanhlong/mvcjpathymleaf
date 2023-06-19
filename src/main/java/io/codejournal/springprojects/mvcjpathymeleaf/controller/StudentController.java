@@ -22,10 +22,15 @@ public class StudentController {
         return "redirect:list";
     }
     @GetMapping("/students/list")
-    public String getStudents(final Model model, @RequestParam(value = "page",defaultValue = "0") final int pageNumber,@RequestParam(value = "size",defaultValue ="2") final int pageSize) {
+    public String getStudents(final Model model, @RequestParam(value = "page",defaultValue = "0") final int pageNumber,@RequestParam(value = "size",defaultValue ="10") final int pageSize) {
         model.addAttribute("message","Hello world in Thymleaf!!!");
         final Page<Student> page = studentService.getStudents(pageNumber,pageSize);
+        final int currentPage = page.getNumber();
+        final int previousPage = page.hasPrevious() ? currentPage -1 : -1;
+        final int nextPage = page.hasNext() ? currentPage + 1 : -1;
         model.addAttribute("students", page.getContent());
+        model.addAttribute("previousPage", previousPage);
+        model.addAttribute("nextPage", nextPage);
         return "students/list";
     }
 
