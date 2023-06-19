@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class StudentController {
-    static final String DEFAULT_PAGE_SIZE = "2";
+    static final String DEFAULT_PAGE_SIZE = "3";
     private StudentService studentService;
 
     @Autowired
