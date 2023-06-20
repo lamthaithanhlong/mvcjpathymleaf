@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -17,6 +18,10 @@ public class StudentService {
     @Autowired
     public StudentService(final StudentRepository repository) {
         this.repository = repository;
+    }
+
+    public List<Student> getListStudent() {
+        return repository.findAll();
     }
 
     public Page<Student> getStudents(final int pageNumber, final int size) {
