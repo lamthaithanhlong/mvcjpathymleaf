@@ -21,4 +21,9 @@ public class AppointmentController {
     public ResponseEntity<List<AppointmentResponseDTO>> listVipAppointment() {
         return ResponseEntity.ok(appointmentService.getVIPAppointments());
     }
+
+    @GetMapping(value = {"/upcomming/list"})
+    public ResponseEntity<List<AppointmentResponseDTO>> listUpcommingAppointment() {
+        return ResponseEntity.ok(appointmentService.getUpcommingAppointment());
+    }
 }

@@ -44,7 +44,13 @@ public class Appointment {
     @Transient
     private Boolean vip;
 
+    @Transient
+    private Boolean upcomming;
+
     public Boolean isVip() {
         return (patient.getElderly());
+    }
+    public Boolean isUpcomming() {
+        return (!appointmentDate.isBefore(LocalDate.now()));
     }
 }

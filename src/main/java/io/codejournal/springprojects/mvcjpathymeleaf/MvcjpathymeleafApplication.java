@@ -61,8 +61,26 @@ public class MvcjpathymeleafApplication {
 			appointment1.setSurgeryLocation("D3 Med Plaza");
 			appointment1.setPatient(patient);
 
+			//Add third appointment
+			Appointment appointment2 = new Appointment();
+			appointment2.setAppointmentId(3L);
+			appointment2.setAppointmentDate(LocalDate.parse("2023-09-23"));
+			appointment2.setAppointmentTime(LocalTime.of(9,00,00));
+			appointment2.setDentistName("Job Lecture");
+			appointment2.setSurgeryLocation("D2 Med Plaza");
+			appointment2.setPatient(patient);
+
+			//Add fourth appointment
+			Appointment appointment3 = new Appointment();
+			appointment3.setAppointmentId(4L);
+			appointment3.setAppointmentDate(LocalDate.parse("2023-06-18"));
+			appointment3.setAppointmentTime(LocalTime.of(9,00,00));
+			appointment3.setDentistName("Job Lecture");
+			appointment3.setSurgeryLocation("D1 Med Plaza");
+			appointment3.setPatient(patient);
+
 			//Save all appointment
-			appointmentRepository.saveAll(Arrays.asList(appointment,appointment1));
+			appointmentRepository.saveAll(Arrays.asList(appointment,appointment1,appointment2,appointment3));
 		};
 	}
 }

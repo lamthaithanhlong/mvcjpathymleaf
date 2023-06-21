@@ -8,5 +8,7 @@ import java.util.List;
 
 @Service
 public interface AppointmentService {
-    public abstract List<AppointmentResponseDTO> getVIPAppointments();
+    List<AppointmentResponseDTO> getVIPAppointments();
+
+    List<AppointmentResponseDTO> getUpcommingAppointment();
 }
