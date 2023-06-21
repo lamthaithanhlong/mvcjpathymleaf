@@ -1,6 +1,6 @@
-package repository;
+package io.codejournal.springprojects.mvcjpathymeleaf.repository;
 
-import entity.Patient;
+import io.codejournal.springprojects.mvcjpathymeleaf.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

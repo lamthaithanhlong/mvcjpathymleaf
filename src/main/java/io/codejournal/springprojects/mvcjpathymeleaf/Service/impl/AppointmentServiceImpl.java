@@ -1,9 +1,9 @@
-package Service.impl;
+package io.codejournal.springprojects.mvcjpathymeleaf.Service.impl;
 
-import entity.Appointment;
+import io.codejournal.springprojects.mvcjpathymeleaf.Service.AppointmentService;
+import io.codejournal.springprojects.mvcjpathymeleaf.entity.Appointment;
 import org.springframework.stereotype.Service;
-import repository.AppointmentRepository;
-import Service.AppointmentService;
+import io.codejournal.springprojects.mvcjpathymeleaf.repository.AppointmentRepository;
 
 import java.util.List;
 

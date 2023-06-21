@@ -1,6 +1,6 @@
-package Service;
+package io.codejournal.springprojects.mvcjpathymeleaf.Service;
 
-import entity.Appointment;
+import io.codejournal.springprojects.mvcjpathymeleaf.entity.Appointment;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

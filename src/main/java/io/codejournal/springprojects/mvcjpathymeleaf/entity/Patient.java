@@ -1,4 +1,4 @@
-package entity;
+package io.codejournal.springprojects.mvcjpathymeleaf.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -10,14 +10,14 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.Period;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "patient")
+@Table(name = "patients")
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +32,25 @@ public class Patient {
     @NotBlank(message = "lastName is not empty")
     private String lastName;
     @Column(nullable = false)
-    @NotBlank(message = "Date of Birth is not empty")
+    @NotNull(message = "Date of Birth is not empty")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "patient_id", nullable = false)
-    private Patient patient;
+
+    // Apply elderly
+    @Transient
+    private Boolean elderly;
+    private Boolean getElderly() {
+        return isElderly();
+    }
+    public void setElderly(Boolean elderly) {
+        if (isElderly()) {
+            this.elderly = true;
+        } else {
+            this.elderly = false;
+        }
+    }
+    private boolean isElderly() {
+        var age = Period.between(dateOfBirth, LocalDate.now()).getYears();
+        return age >= 65;
+    }
 }

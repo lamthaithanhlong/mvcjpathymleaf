@@ -1,4 +1,4 @@
-package entity;
+package io.codejournal.springprojects.mvcjpathymeleaf.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -37,5 +37,7 @@ public class Appointment {
     @Column(nullable = false)
     @NotNull(message = "surgery Location is required")
     private String surgeryLocation;
-
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "patient_id", nullable = false)
+    private Patient patient;
 }
