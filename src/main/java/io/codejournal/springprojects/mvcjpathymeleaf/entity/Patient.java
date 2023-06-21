@@ -39,6 +39,14 @@ public class Patient {
     // Apply elderly
     @Transient
     private Boolean elderly;
+
+    public Patient(String patientNumber, String firstName, String lastName, LocalDate dateOfBirth) {
+        this.patientNumber = patientNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public boolean getElderly() {
         return isElderly();
     }
