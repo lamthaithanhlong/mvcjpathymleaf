@@ -43,6 +43,7 @@ public class AccountController {
         List<AccountResponseDTO> accounts = accountService.getAllAccount();
         for (AccountResponseDTO a: accounts)
             totalAmounts += a.balance();
+
         Map<String, Object> response = new HashMap<>();
         response.put("totalBankBalance", totalAmounts);
         return ResponseEntity.ok(response);

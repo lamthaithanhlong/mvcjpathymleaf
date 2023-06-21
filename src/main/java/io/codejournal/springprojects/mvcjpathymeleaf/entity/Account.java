@@ -39,7 +39,7 @@ public class Account {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate lastTransactionDate;
     @Column(nullable = false)
-    @NotNull(message = "Appointment Date is required")
+    @NotNull(message = "lastTransactionTime is required")
     @DateTimeFormat(pattern = "hh:mm:ss")
     private LocalTime lastTransactionTime;
 
@@ -86,8 +86,9 @@ public class Account {
     }
     public boolean isActiveAccounts() {
         LocalDate today = LocalDate.now();
-        LocalDate oneMonthBefore = today.minusMonths(1);
-        return (lastTransactionDate.isAfter(oneMonthBefore));
+        LocalDate inOneMonth = today.minusMonths(1);
+        inOneMonth = inOneMonth.minusDays(1);
+        return (lastTransactionDate.isAfter(inOneMonth));
     }
 
 
