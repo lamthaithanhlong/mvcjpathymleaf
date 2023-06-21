@@ -39,7 +39,7 @@ public class Patient {
     // Apply elderly
     @Transient
     private Boolean elderly;
-    private Boolean getElderly() {
+    public boolean getElderly() {
         return isElderly();
     }
     public void setElderly(Boolean elderly) {

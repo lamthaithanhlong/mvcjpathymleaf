@@ -16,7 +16,7 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public List<Appointment> getVIPAppointments() {
+    public List<Appointment> getVIPAppointments()  {
         return null;
     }
 }

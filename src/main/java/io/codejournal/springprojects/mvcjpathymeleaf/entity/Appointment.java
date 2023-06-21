@@ -40,4 +40,11 @@ public class Appointment {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
+
+    @Transient
+    private Boolean vip;
+
+    public Boolean isVip() {
+        return (patient.getElderly());
+    }
 }
