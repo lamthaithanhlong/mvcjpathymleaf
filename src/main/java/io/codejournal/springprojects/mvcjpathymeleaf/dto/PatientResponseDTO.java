@@ -1,7 +1,5 @@
 package io.codejournal.springprojects.mvcjpathymeleaf.dto;
 
-import org.springframework.cglib.core.Local;
-
 import java.time.LocalDate;
 
 public record PatientResponseDTO (
@@ -10,6 +8,4 @@ public record PatientResponseDTO (
         String firstName,
         String lastName,
         LocalDate dateOfBirth
-        ) {
-
-}
+        ) {}

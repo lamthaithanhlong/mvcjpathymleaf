@@ -8,7 +8,7 @@ public record AppointmentResponseDTO(
         LocalDate appointmentDate,
         LocalTime appointmentTime,
         String dentistName,
-        String suregeryLocation
-) {
+        String suregeryLocation,
+        PatientResponseDTO patientResponseDTO) {
 
 }
