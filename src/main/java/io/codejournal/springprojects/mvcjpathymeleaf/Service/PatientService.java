@@ -9,4 +9,6 @@ public interface PatientService {
     PatientResponseDTO registerNewPatient(PatientRequestDTO patientRequestDTO);
 
     PatientRequestDTO editPatient(Long patientId, PatientRequestDTO patientRequestDTO) throws IllegalAccessException;
+
+    PatientResponseDTO deletePatient(Long patientId);
 }

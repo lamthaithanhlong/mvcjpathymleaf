@@ -49,4 +49,19 @@ public class PatientServiceImplement implements PatientService {
                 updatedPatient.getDateOfBirth()
         );
     }
+
+    @Override
+    public PatientResponseDTO deletePatient(Long patientId) {
+        Patient deletedPatient = patientRepository.findById(patientId).orElseThrow(() -> new IllegalArgumentException("Patient not found"));
+        patientRepository.deleteById(patientId);
+        return new PatientResponseDTO(
+                deletedPatient.getPatientId(),
+                deletedPatient.getPatientNumber(),
+                deletedPatient.getFirstName(),
+                deletedPatient.getLastName(),
+                deletedPatient.getDateOfBirth()
+        );
+    }
+
+
 }

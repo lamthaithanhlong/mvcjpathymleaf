@@ -28,4 +28,9 @@ public class PatientController {
     public ResponseEntity<PatientRequestDTO> editPatient(@PathVariable Long patientId, @RequestBody PatientRequestDTO patientRequestDTO) throws IllegalAccessException {
         return new ResponseEntity<PatientRequestDTO>(patientService.editPatient(patientId, patientRequestDTO), HttpStatus.OK);
     }
+
+    @DeleteMapping(value = {"/delete/{patientId}"})
+    public ResponseEntity<PatientResponseDTO> deletePatient(@PathVariable Long patientId) {
+        return new ResponseEntity<PatientResponseDTO>(patientService.deletePatient(patientId), HttpStatus.OK);
+    }
 }
