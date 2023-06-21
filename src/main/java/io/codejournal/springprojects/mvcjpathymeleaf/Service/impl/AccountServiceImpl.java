@@ -53,6 +53,21 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public List<AccountResponseDTO> getAllAccount() {
+        return accountRepository.findAll()
+                .stream()
+                .map(account -> new AccountResponseDTO(
+                        account.getAccountId(),
+                        account.getAccountNumber(),
+                        account.getCustomerName(),
+                        account.getAccountType(),
+                        account.getBalance(),
+                        account.getLastTransactionDate(),
+                        account.getLastTransactionTime()
+                )).toList();
+    }
+
+    @Override
     public AccountResponseDTO registerNewAccount(AccountRequestDTO patientRequestDTO) {
         var account = new Account(
                 patientRequestDTO.accountNumber(),

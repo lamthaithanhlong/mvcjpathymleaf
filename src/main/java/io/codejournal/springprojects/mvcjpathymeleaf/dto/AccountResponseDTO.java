@@ -8,7 +8,7 @@ public record AccountResponseDTO(
         String accountNumber,
         String customerName,
         String accountType,
-        String balance,
+        Double balance,
         LocalDate lastTransactionDate,
         LocalTime lastTransactionTime) {
 }

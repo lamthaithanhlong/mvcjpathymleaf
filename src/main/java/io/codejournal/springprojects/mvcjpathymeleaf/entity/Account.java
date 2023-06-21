@@ -33,7 +33,7 @@ public class Account {
     private String accountType;
     @Column(nullable = false)
     @NotNull(message = "balance is required")
-    private String balance;
+    private Double balance;
     @Column(nullable = false)
     @NotNull(message = "lastTransactionDate is required")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -43,7 +43,7 @@ public class Account {
     @DateTimeFormat(pattern = "hh:mm:ss")
     private LocalTime lastTransactionTime;
 
-    public Account(String accountNumber, String customerName, String accountType, String balance, LocalDate lastTransactionDate, LocalTime lastTransactionTime) {
+    public Account(String accountNumber, String customerName, String accountType, Double balance, LocalDate lastTransactionDate, LocalTime lastTransactionTime) {
         this.accountNumber = accountNumber;
         this.customerName = customerName;
         this.accountType = accountType;

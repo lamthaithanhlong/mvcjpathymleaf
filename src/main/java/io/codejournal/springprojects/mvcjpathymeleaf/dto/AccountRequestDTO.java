@@ -7,7 +7,7 @@ public record AccountRequestDTO (
         String accountNumber,
         String customerName,
         String accountType,
-        String balance,
+        Double balance,
         LocalDate lastTransactionDate,
         LocalTime lastTransactionTime
 ) {

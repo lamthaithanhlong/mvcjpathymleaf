@@ -34,7 +34,7 @@ public class MvcjpathymeleafApplication {
 			account1.setAccountNumber("SV1104");
 			account1.setCustomerName("AgroFeeds Corporation");
 			account1.setAccountType("Savings");
-			account1.setBalance("197,750.00");
+			account1.setBalance(197750.00);
 			account1.setLastTransactionDate(LocalDate.parse("2023-05-21"));
 			account1.setLastTransactionTime(LocalTime.of(10,05,00));
 
@@ -45,7 +45,7 @@ public class MvcjpathymeleafApplication {
 			account2.setAccountNumber("SV2307");
 			account2.setCustomerName("DeLawro and Co., LLC");
 			account2.setAccountType("Savings");
-			account2.setBalance("842,000.75");
+			account2.setBalance(842000.75);
 			account2.setLastTransactionDate(LocalDate.parse("2023-05-20"));
 			account2.setLastTransactionTime(LocalTime.of(07,00,00));
 
@@ -55,7 +55,7 @@ public class MvcjpathymeleafApplication {
 			account3.setAccountNumber("CK4133");
 			account3.setCustomerName("Bolingo Ventures");
 			account3.setAccountType("Checking");
-			account3.setBalance("74,500.00");
+			account3.setBalance(74500.00);
 			account3.setLastTransactionDate(LocalDate.parse("2022-11-16"));
 			account3.setLastTransactionTime(LocalTime.of(07,00,00));
 
@@ -66,7 +66,7 @@ public class MvcjpathymeleafApplication {
 			account4.setAccountNumber("CK1089");
 			account4.setCustomerName("United Metals Inc.");
 			account4.setAccountType("Checking");
-			account4.setBalance("105,945.50");
+			account4.setBalance(105945.50);
 			account4.setLastTransactionDate(LocalDate.parse("2023-06-13"));
 			account4.setLastTransactionTime(LocalTime.of(10,05,00));
 

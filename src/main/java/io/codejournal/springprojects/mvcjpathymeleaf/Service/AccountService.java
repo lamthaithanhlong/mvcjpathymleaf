@@ -12,5 +12,7 @@ public interface AccountService {
 
     List<AccountResponseDTO> getAllActiveAccount();
 
+    List<AccountResponseDTO> getAllAccount();
+
     AccountResponseDTO registerNewAccount(AccountRequestDTO accountRequestDTO);
 }
