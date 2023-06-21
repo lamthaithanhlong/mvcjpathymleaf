@@ -10,6 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.Period;
 
 @Entity
 @Getter
@@ -41,4 +42,53 @@ public class Account {
     @NotNull(message = "Appointment Date is required")
     @DateTimeFormat(pattern = "hh:mm:ss")
     private LocalTime lastTransactionTime;
+
+    public Account(String accountNumber, String customerName, String accountType, String balance, LocalDate lastTransactionDate, LocalTime lastTransactionTime) {
+        this.accountNumber = accountNumber;
+        this.customerName = customerName;
+        this.accountType = accountType;
+        this.balance = balance;
+        this.lastTransactionDate = lastTransactionDate;
+        this.lastTransactionTime = lastTransactionTime;
+    }
+
+    @Transient
+    private Boolean dormantAccounts;
+
+    public boolean getDormantAccounts() {
+        return isDormantAccounts();
+    }
+    public void setDormantAccounts(Boolean dormantAccounts) {
+        if (isDormantAccounts()) {
+            this.dormantAccounts = true;
+        } else {
+            this.dormantAccounts = false;
+        }
+    }
+    public boolean isDormantAccounts() {
+        LocalDate today = LocalDate.now();
+        LocalDate oneMonthBefore = today.minusMonths(1);
+        return (lastTransactionDate.isBefore(oneMonthBefore));
+    }
+
+    @Transient
+    private Boolean activeAccounts;
+
+    public boolean getActiveAccounts() {
+        return isActiveAccounts();
+    }
+    public void setActiveAccounts(Boolean activeAccounts) {
+        if (isDormantAccounts()) {
+            this.activeAccounts = true;
+        } else {
+            this.activeAccounts = false;
+        }
+    }
+    public boolean isActiveAccounts() {
+        LocalDate today = LocalDate.now();
+        LocalDate oneMonthBefore = today.minusMonths(1);
+        return (lastTransactionDate.isAfter(oneMonthBefore));
+    }
+
+
 }

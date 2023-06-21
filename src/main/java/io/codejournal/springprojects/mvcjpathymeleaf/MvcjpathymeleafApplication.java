@@ -1,16 +1,12 @@
 package io.codejournal.springprojects.mvcjpathymeleaf;
 
 import io.codejournal.springprojects.mvcjpathymeleaf.entity.Account;
-import io.codejournal.springprojects.mvcjpathymeleaf.entity.Appointment;
-import io.codejournal.springprojects.mvcjpathymeleaf.entity.Patient;
 import io.codejournal.springprojects.mvcjpathymeleaf.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import io.codejournal.springprojects.mvcjpathymeleaf.repository.AppointmentRepository;
-import io.codejournal.springprojects.mvcjpathymeleaf.repository.PatientRepository;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -19,17 +15,9 @@ import java.util.Arrays;
 @SpringBootApplication
 public class MvcjpathymeleafApplication {
 	@Autowired
-	private final AppointmentRepository appointmentRepository;
-
-	@Autowired
-	private final PatientRepository patientRepository;
-
-	@Autowired
 	private final AccountRepository accountRepository;
 
-	public MvcjpathymeleafApplication(AppointmentRepository appointmentRepository, PatientRepository patientRepository, AccountRepository accountRepository) {
-		this.appointmentRepository = appointmentRepository;
-		this.patientRepository = patientRepository;
+	public MvcjpathymeleafApplication(AccountRepository accountRepository) {
 		this.accountRepository = accountRepository;
 	}
 
@@ -42,7 +30,7 @@ public class MvcjpathymeleafApplication {
 		return args -> {
 			//Add Account
 			Account account1 = new Account();
-			account1.setAccountId(2L);
+			account1.setAccountId(1L);
 			account1.setAccountNumber("SV1104");
 			account1.setCustomerName("AgroFeeds Corporation");
 			account1.setAccountType("Savings");
@@ -53,7 +41,7 @@ public class MvcjpathymeleafApplication {
 
 			//Add Account
 			Account account2 = new Account();
-			account2.setAccountId(3L);
+			account2.setAccountId(2L);
 			account2.setAccountNumber("SV2307");
 			account2.setCustomerName("DeLawro and Co., LLC");
 			account2.setAccountType("Savings");
@@ -63,7 +51,7 @@ public class MvcjpathymeleafApplication {
 
 			//Add Account
 			Account account3 = new Account();
-			account3.setAccountId(4L);
+			account3.setAccountId(3L);
 			account3.setAccountNumber("CK4133");
 			account3.setCustomerName("Bolingo Ventures");
 			account3.setAccountType("Checking");
@@ -74,7 +62,7 @@ public class MvcjpathymeleafApplication {
 
 			//Add Account
 			Account account4 = new Account();
-			account4.setAccountId(1L);
+			account4.setAccountId(4L);
 			account4.setAccountNumber("CK1089");
 			account4.setCustomerName("United Metals Inc.");
 			account4.setAccountType("Checking");
